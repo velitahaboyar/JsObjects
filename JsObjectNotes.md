@@ -11,3 +11,4 @@ JsObjects Notlar
 * *DOMparse, *JSONparse, *JSON.stringify.. Bunlar önemli abiiii.
 
 
+<img width="896" alt="Pasted Graphic" src="https://github.com/user-attachments/assets/75efa151-9981-4a21-ad29-ab7efaf656e0" />
