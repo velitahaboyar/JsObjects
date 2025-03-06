@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="myString"></p>
+
+    <script>
+      var xmlText, xmlDoc, xmlParser;
+      xmlText =
+        // "<student>" +
+        // "<name>onur</name>" +
+        // "<surname>kula</surname>" +
+        // "</student>";
+
+        "<asdasd>onur</asdasd>";
+
+      xmlParser = new DOMParser();
+      xmlDoc = xmlParser.parseFromString(xmlText, "text/xml");
+      document.getElementById("myString").innerHTML =
+        xmlDoc.getElementsByTagName("asdasd")[0].childNodes[0].nodeValue;
+      d;
+    </script>
+  </body>
+</html>

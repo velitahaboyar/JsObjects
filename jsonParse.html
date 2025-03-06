@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      const NorthwindJSON = `{
+                  "OrderID": "10248",
+                  "CustomerID": "VINET",
+                  "EmployeeID": "5",
+                  "OrderDate": "1996-07-04",
+                  "RequiredDate": "1996-08-01",
+                  "OrderDetails": [
+                      {
+                      "ProductID": "1",
+                      "UnitPrice": "100",
+                      "Quantity": "37",
+                      "Discount": "0"
+                      },
+                      {
+                      "ProductID": "11",
+                      "UnitPrice": "14",
+                      "Quantity": "12",
+                      "Discount": "0"
+                      }
+                  ]
+                  }`;
+
+      const DollarJSON = `{
+      	"Tarih_Date": {
+      		"Currency": [
+      			{
+      				"Unit": "1",
+      				"Isim": "ABD DOLARI",
+      				"CurrencyName": "US DOLLAR",
+      				"ForexBuying": "36.4011",
+      				"ForexSelling": "36.4667",
+      				"BanknoteBuying": "36.3756",
+      				"BanknoteSelling": "36.5214",
+      				"CrossRateUSD": "",
+      				"CrossRateOther": "",
+      				"_CrossOrder": "0",
+      				"_Kod": "USD",
+      				"_CurrencyCode": "USD"
+      			},
+      			{
+      				"Unit": "1",
+      				"Isim": "RUS RUBLESİ",
+      				"CurrencyName": "RUSSIAN ROUBLE",
+      				"ForexBuying": "0.40541",
+      				"ForexSelling": "0.41072",
+      				"BanknoteBuying": "",
+      				"BanknoteSelling": "",
+      				"CrossRateUSD": "89.29",
+      				"CrossRateOther": "",
+      				"_CrossOrder": "14",
+      				"_Kod": "RUB",
+      				"_CurrencyCode": "RUB"
+      			},
+      			{
+      				"Unit": "1",
+      				"Isim": "ÇİN YUANI",
+      				"CurrencyName": "CHINESE RENMINBI",
+      				"ForexBuying": "4.9755",
+      				"ForexSelling": "5.0406",
+      				"BanknoteBuying": "",
+      				"BanknoteSelling": "",
+      				"CrossRateUSD": "7.2751",
+      				"CrossRateOther": "",
+      				"_CrossOrder": "16",
+      				"_Kod": "CNY",
+      				"_CurrencyCode": "CNY"
+      			},
+      			{
+      				"Unit": "1",
+      				"Isim": "PAKİSTAN RUPİSİ",
+      				"CurrencyName": "PAKISTANI RUPEE",
+      				"ForexBuying": "0.12941",
+      				"ForexSelling": "0.13111",
+      				"BanknoteBuying": "",
+      				"BanknoteSelling": "",
+      				"CrossRateUSD": "279.70",
+      				"CrossRateOther": "",
+      				"_CrossOrder": "17",
+      				"_Kod": "PKR",
+      				"_CurrencyCode": "PKR"
+      			}
+      		]
+      	}
+      }`;
+
+      // myJSONObject yukarıdaki JSON string'ini JSON.parse metodu ile objeye dönüştürülmüş olarak tutar
+      // ve JSON dosyasının içindeki alan ve alt kısımları sorgulayabilir hale getirir.
+
+      const myJSONObject = JSON.parse(NorthwindJSON);
+      //   document.getElementById("demo").innerHTML =
+      //     myJSONObject.OrderID + " " + myJSONObject.OrderDetails[0].ProductID;
+
+      //   let sonFiyat =
+      //     myJSONObject.OrderDetails[0].Quantity *
+      //     myJSONObject.OrderDetails[0].UnitPrice;
+      //   console.log(sonFiyat);
+
+      const kurlarJson = JSON.parse(DollarJSON);
+      document.getElementById("demo").innerHTML =
+        kurlarJson.Tarih_Date.Currency[0].Unit +
+        " " +
+        kurlarJson.Tarih_Date.Currency[0].CurrencyName +
+        " " +
+        "=" +
+        " " +
+        kurlarJson.Tarih_Date.Currency[0].ForexBuying;
+    </script>
+  </body>
+</html>
